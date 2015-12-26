@@ -6,6 +6,7 @@ module.exports = {
     'webpack/hot/only-dev-server',
     './src/index.js'
   ],
+  devtool: 'inline-source-map',
   output: {
     path: __dirname + '/dist',
     publicPath: '/dist',
