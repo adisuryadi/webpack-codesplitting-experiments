@@ -1,10 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Root from './core/Root';
+import FluxComponent from 'flummox/component';
 import createHashHistory from 'history/lib/createHashHistory';
+import AppFlux from './core/AppFlux';
+import Root from './core/Root';
 
+const flux = new AppFlux();
 const history = createHashHistory();
 
-ReactDOM.render(<Root history={history} />,
+function createRoot(flux, history) {
+  return (
+    <FluxComponent flux={flux}>
+      <Root history={history} />
+    </FluxComponent>
+  );
+}
+
+ReactDOM.render(createRoot(flux, history),
   document.getElementById('app')
 );

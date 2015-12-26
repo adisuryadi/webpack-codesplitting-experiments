@@ -8,11 +8,11 @@ const Messages = React.createClass({
   render() {
     const messages = this.props.messages;
     return (
-        <div>
-          {messages && messages.map(msg =>
-            <div>{msg}</div>
+        <ul>
+          {messages && messages.map((msg, i) =>
+            <li key={i}>{msg}</li>
           )}
-        </div>
+        </ul>
     );
   }
 });
