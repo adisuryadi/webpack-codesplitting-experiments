@@ -16,8 +16,9 @@ class MessageStore extends Store {
   }
 
   handleNewMessage(message) {
+    const content = message.content;
     this.setState({
-      messages: this.state.messages.concat([message])
+      messages: this.state.messages.concat([content])
     })
   }
 }
