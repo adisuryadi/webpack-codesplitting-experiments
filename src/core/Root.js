@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react';
 import { Router, Route } from 'react-router';
 import FluxComponent from 'flummox/component';
-import App from './App';
 
 const rootRoute = {
   component: 'div',
