@@ -2,7 +2,8 @@ import React, { PropTypes } from 'react';
 
 const Counter = React.createClass({
   propTypes: {
-    counter: PropTypes.number.isRequired
+    flux: PropTypes.object,
+    counter: PropTypes.number
   },
 
   handleDecrement() {

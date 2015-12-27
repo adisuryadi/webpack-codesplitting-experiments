@@ -1,9 +1,9 @@
 import React, { PropTypes } from 'react';
 import ReactDOM from 'react-dom';
 
-const Messages = React.createClass({
+const Message = React.createClass({
   propTypes: {
-    flux: PropTypes.object.isRequired,
+    flux: PropTypes.object,
     messages: PropTypes.array
   },
 
@@ -31,4 +31,4 @@ const Messages = React.createClass({
   }
 });
 
-export default Messages;
+export default Message;

@@ -5,8 +5,8 @@ import createHashHistory from 'history/lib/createHashHistory';
 import AppFlux from './core/AppFlux';
 import Root from './core/Root';
 
-const flux = new AppFlux();
 const history = createHashHistory();
+export const flux = new AppFlux();
 
 if (window) {
   window.flux = flux;

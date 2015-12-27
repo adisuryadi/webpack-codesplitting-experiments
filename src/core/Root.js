@@ -1,6 +1,19 @@
 import React, { PropTypes } from 'react';
 import { Router, Route } from 'react-router';
+import FluxComponent from 'flummox/component';
 import App from './App';
+
+const rootRoute = {
+  component: 'div',
+  childRoutes: [{
+    path: '/',
+    component: require('./App'),
+    childRoutes: [
+      require('../modules/message'),
+      require('../modules/counter')
+    ]
+  }]
+};
 
 const Root = React.createClass({
   propTypes: {
@@ -11,9 +24,7 @@ const Root = React.createClass({
     const history = this.props.history;
 
     return (
-     <Router history={history}>
-       <Route path="/" component={App} />
-     </Router>
+      <Router history={history} routes={rootRoute} />
     );
   }
 });

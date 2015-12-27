@@ -1,17 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router';
 import FluxComponent from 'flummox/component';
-import Messages from '../message/components/Messages.react';
-import Counter from '../counter/components/Counter.react';
 
 const App = React.createClass({
   render() {
     return (
-      <FluxComponent connectToStores={['messages', 'counter']}>
-        <Messages />
-        <Counter />
-      </FluxComponent>
+      <div>
+        <Link to="/message">Message</Link>&nbsp;
+        <Link to="/counter">Counter</Link>
+        {this.props.children}
+      </div>
     );
   }
 });
 
-export default App;
+module.exports = App;
