@@ -8,6 +8,10 @@ import Root from './core/Root';
 const flux = new AppFlux();
 const history = createHashHistory();
 
+if (window) {
+  window.flux = flux;
+}
+
 function createRoot(flux, history) {
   return (
     <FluxComponent flux={flux}>
