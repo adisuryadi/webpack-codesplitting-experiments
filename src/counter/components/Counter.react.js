@@ -13,12 +13,17 @@ const Counter = React.createClass({
     this.props.flux.getActions('counter').increment();
   },
 
+  handleIncrementAsync() {
+    this.props.flux.getActions('counter').incrementAsync();
+  },
+
   render() {
     return (
         <div>
-          <span>{this.props.counter}</span>
+          <span>{this.props.counter}</span><br/>
           <button onClick={this.handleIncrement}>+ increment</button>
-          <button onClick={this.handleDecrement}>- decrement</button>
+          <button onClick={this.handleDecrement}>- decrement</button><br/>
+          <button onClick={this.handleIncrementAsync}>+ increment async</button>
         </div>
     );
   },

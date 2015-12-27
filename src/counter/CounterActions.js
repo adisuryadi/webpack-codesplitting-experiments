@@ -8,6 +8,14 @@ class CounterActions extends Actions {
   decrement() {
     return true;
   }
+
+  incrementAsync() {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve(true);
+      }, 1000)
+    });
+  }
 }
 
 export default CounterActions;

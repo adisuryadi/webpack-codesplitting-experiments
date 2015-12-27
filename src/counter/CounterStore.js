@@ -11,6 +11,7 @@ class CounterStore extends Store {
     const messageActionIds = flux.getActionIds('counter');
     this.register(messageActionIds.decrement, this.handleDecrement);
     this.register(messageActionIds.increment, this.handleIncrement);
+    this.register(messageActionIds.incrementAsync, this.handleIncrement);
   }
 
   handleDecrement() {
